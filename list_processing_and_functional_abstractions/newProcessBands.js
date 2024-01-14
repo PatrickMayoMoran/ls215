@@ -6,19 +6,21 @@ let bands = [
 ];
 
 function processBands(data) {
-  data.forEach(band => {
-    canadize(band);
-    normalizeName(band);
+  let newBands = data.map(band => {
+    let newBand = {
+      name: capitalize(removeDots(band.name)),
+      country: 'Canada',
+      active: band.active,
+    }
+    return newBand;
   });
-  return data;
+
+  return newBands;
 }
 
-function normalizeName(band) {
-  band.name = band.name.replace('.','');
-  band.name = capitalize(band.name);
+function removeDots(name) {
+  return name.replace('.','');
 }
-
-function canadize(band) { band.country = 'Canada'; };
 
 function capitalize(name) {
   let words = name.split(' ');
@@ -27,7 +29,12 @@ function capitalize(name) {
   return words.join(' ');
 }
 
+let processedBands = processBands(bands);
 console.log(processBands(bands));
+console.log(processedBands === processBands(bands));
+console.log(processedBands === bands);
+console.log(processedBands[0] === bands[0]);
+
 
 // should return:
 // [
