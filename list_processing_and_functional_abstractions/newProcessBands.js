@@ -34,6 +34,12 @@ console.log(processBands(bands));
 console.log(processedBands === processBands(bands));
 console.log(processedBands === bands);
 console.log(processedBands[0] === bands[0]);
+// Display of differences
+console.log('Unprocessed:');
+console.log(bands);
+
+console.log('Processed:')
+console.log(processedBands);
 
 
 // should return:
