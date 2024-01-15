@@ -4,6 +4,8 @@ function reverse(string) {
     reversedString += string[i];
   }
 
+  return string.split('').reverse().join('');
+
   return reversedString;
 }
 
