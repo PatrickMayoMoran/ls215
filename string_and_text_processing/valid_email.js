@@ -4,7 +4,7 @@ function isValidEmail(email) {
   // original solution - coercion of match result to boolean equivalent
   // let match = email.match(validEmail);
   // return !!match;
-  let globalValidEmail = /^[A-Za-z0-9]+@[A-Za-z]+(\.[A-Za-z]+)+$/g;
+  let globalValidEmail = /^[a-z0-9]+@[a-z]+(\.[a-z]+)+$/gi;
   // ALWAYS ZERO - haven't run a test yet
   // console.log(globalValidEmail.lastIndex);
   let match = globalValidEmail.test(email);
