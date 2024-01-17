@@ -1,9 +1,11 @@
 function isValidEmail(email) {
   let validEmail = /^[A-Za-z0-9]+@[A-Za-z]+(\.[A-Za-z]+)+$/;
-  return validEmail.test(email);
+  validEmail.test(email);
   // original solution - coercion of match result to boolean equivalent
   // let match = email.match(validEmail);
   // return !!match;
+  let globalValidEmail = /^[A-Za-z0-9]+@[A-Za-z]+(\.[A-Za-z]+)+$/g;
+  return globalValidEmail.test(email);
 }
 
 console.log(isValidEmail('Foo@baz.com.ph'));          // returns true
