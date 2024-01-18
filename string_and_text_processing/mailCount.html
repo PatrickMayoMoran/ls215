@@ -26,7 +26,10 @@
         let dates = emails.map(email => email.split(sectionDelimiter)[2]);
         dates = dates.map(dateSection => extractDate(dateSection));
         dates.sort();
-        console.log(dates);
+        let earliestDate = dates[0].toDateString();
+        let latestDate = dates[dates.length - 1].toDateString();
+        console.log(`Count of Email: ${numberOfEmails}\n`);
+        console.log(`Date Range: ${earliestDate} - ${latestDate}\n`);
       }
 
       function extractDate(dateSection) {
