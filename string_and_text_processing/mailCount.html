@@ -24,9 +24,18 @@
         let numberOfEmails = emails.length;
 
         let dates = emails.map(email => email.split(sectionDelimiter)[2]);
+        dates = dates.map(dateSection => extractDate(dateSection));
         console.log(dates);
       }
-      
+
+      function extractDate(dateSection) {
+        let dateRegex = /(\d{2})-(\d{2})-(\d{4})/;
+        let givenDate = dateSection.match(dateRegex)[0];
+        let formattedDate = givenDate.replace(dateRegex, '$3-$1-$2');
+        let dateObject = new Date(formattedDate);
+        return dateObject;
+      }
+
       mailCount(emailData);
       // console output
 
