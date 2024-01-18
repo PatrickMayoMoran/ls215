@@ -38,12 +38,24 @@ let longText = 'Four score and seven years ago our fathers brought forth' +
 // word count of final element is word count
 function longestSentence(text) {
   let sentences = parseSentences(text);
+  sentences.sort((a, b) => countWords(a) - countWords(b));
   console.log(sentences);
 }
 
 function parseSentences(text) {
   let sentenceRegEx = /[a-z]+?.+?(\?|\.|!)/gi;
   return text.match(sentenceRegEx);
+}
+
+function countWords(sentence) {
+  let normalizedSentence = normalize(sentence);
+  let words = normalizedSentence.split(/\s+/);
+  return words.length;
+}
+
+function normalize(sentence) {
+  let unwantedSymbolsRegEx = /-/g;
+  return sentence.replaceAll(unwantedSymbolsRegEx, ' ');
 }
 
 longestSentence(longText);
