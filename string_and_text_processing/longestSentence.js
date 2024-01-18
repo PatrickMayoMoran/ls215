@@ -39,7 +39,10 @@ let longText = 'Four score and seven years ago our fathers brought forth' +
 function longestSentence(text) {
   let sentences = parseSentences(text);
   sentences.sort((a, b) => countWords(a) - countWords(b));
-  console.log(sentences);
+  let theLongest = sentences[sentences.length - 1];
+  let wordCount = countWords(theLongest);
+  console.log(theLongest);
+  console.log(`\nThe longest sentence has ${wordCount} words.\n`);
 }
 
 function parseSentences(text) {
