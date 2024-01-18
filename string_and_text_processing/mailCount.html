@@ -23,7 +23,7 @@
         let emails = emailData.split(emailDelimiter);
         let numberOfEmails = emails.length;
 
-        let dates = emails.map(email => email.split(sectionDelimiter));
+        let dates = emails.map(email => email.split(sectionDelimiter)[2]);
         console.log(dates);
       }
       
