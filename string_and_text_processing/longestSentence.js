@@ -28,8 +28,22 @@ let longText = 'Four score and seven years ago our fathers brought forth' +
   ' the people, for the people, shall not perish from the' +
   ' earth.';
 
+// Match sentences that start with a word, have characters, end with a sentence ender
+// Count words in a sentence
+//    replace dashes with white space
+//    split sentence on white space
+//    length of array is count of words
+// Sort sentences by word count
+// final element of sorted array is longest sentence
+// word count of final element is word count
 function longestSentence(text) {
-  // ...
+  let sentences = parseSentences(text);
+  console.log(sentences);
+}
+
+function parseSentences(text) {
+  let sentenceRegEx = /[a-z]+?.+?(\?|\.|!)/gi;
+  return text.match(sentenceRegEx);
 }
 
 longestSentence(longText);
@@ -42,7 +56,7 @@ longestSentence(longText);
 
 // Assuming the last sentence is removed:
 
-longestSentence(longText);
+// longestSentence(longText);
 
 // console output
 // Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal.
