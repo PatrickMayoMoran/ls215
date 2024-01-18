@@ -25,6 +25,7 @@
 
         let dates = emails.map(email => email.split(sectionDelimiter)[2]);
         dates = dates.map(dateSection => extractDate(dateSection));
+        dates.sort();
         console.log(dates);
       }
 
