@@ -38,22 +38,18 @@ let positiveWords = ['fortune', 'dream', 'love', 'respect', 'patience', 'devout'
 let negativeWords = ['die', 'heartache', 'death', 'despise', 'scorn', 'weary', 'trouble', 'oppress'];
 
 function sentiment(text) {
-  text = text.replace(/[A-Za-z\s]+/, ' ');
-  let positiveCount = 0;
-  let negativeCount = 0;
+  text = text.replace(/[^A-Za-z\s]+/g, ' ');
   let words = text.split(/\s+/);
+  let textPositives = words.filter(word => positiveWords.includes(word));
+  let textNegatives = words.filter(word => negativeWords.includes(word));
 
-  words.forEach(word => {
-    if (positiveWords.includes(word)) {
-      positiveCount += 1;
-    } else if (negativeWords.includes(word)) {
-      negativeCount += 1;
-    }
-  });
+  console.log(textPositives);
+  console.log(textNegatives);
 
-  console.log(`There are ${positiveCount} positive words in the text`);
-  console.log(`There are ${negativeCount} negative words in the text`);
-  let prevailingSentiment = positiveCount > negativeCount ? 'positive' : 'negative';
+
+  console.log(`There are ${textPositives.length} positive words in the text`);
+  console.log(`There are ${textNegatives.length} negative words in the text`);
+  let prevailingSentiment = textPositives.length > textNegatives.length ? 'positive' : 'negative';
   console.log(`The sentiment of the text is ${prevailingSentiment}`);
 }
 
