@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://dbdwvr6p7sskw.cloudfront.net/210/files/email_data_v2.js">
+    </script>
+    <script>
+      // create array of Emails, parsing by email separator ##||##
+      // length of this array is number of emails
+      // map array to just the dates
+      //  split email by section separator #/#
+      //  date will be third item, index 2
+      //  use Date object to convert dates to actual date
+      // sort dates by earliest to latest
+      // create display range of dates with first and last elements
+      // of sorted dates
+      // display desired output
+      function mailCount(emailData) {
+        let emailDelimiter = /##\|\|##/;
+        let sectionDelimiter = /#\/#/;
+        let emails = emailData.split(emailDelimiter);
+        let numberOfEmails = emails.length;
+
+        let dates = emails.map(email => email.split(sectionDelimiter));
+        console.log(dates);
+      }
+      
+      mailCount(emailData);
+      // console output
+
+      // Count of Email: 5
+      // Date Range: Sat Jun 25 2016 - Thu Aug 11 2016
+    </script>
+  </body>
+</html>
