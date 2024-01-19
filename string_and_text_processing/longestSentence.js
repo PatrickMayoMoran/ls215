@@ -44,26 +44,27 @@ function longestSentence(text) {
   let wordCount = countWords(theLongest);
 
   console.log(theLongest);
-  console.log(`\nThe longest sentence has ${wordCount} words.\n`);
+  console.log(`\nThe longest sentence has ${wordCount} word(s).\n`);
 }
 
 function parseSentences(text) {
-  let sentenceRegEx = /\w+?[^?.!]+?[?.!]/gi;
+  let sentenceRegEx = /\w+[^?.!]*[?.!]/gi;
   return text.match(sentenceRegEx);
 }
 
 function countWords(sentence) {
-  let normalizedSentence = normalize(sentence);
-  let words = normalizedSentence.split(/\s+/);
+  // let normalizedSentence = normalize(sentence);
+  let words = sentence.split(/\s+/);
   return words.length;
 }
 
-function normalize(sentence) {
-  let unwantedSymbolsRegEx = /-/g;
-  return sentence.replaceAll(unwantedSymbolsRegEx, ' ');
-}
+// function normalize(sentence) {
+//   let unwantedSymbolsRegEx = /-/g;
+//   return sentence.replaceAll(unwantedSymbolsRegEx, ' ');
+// }
 
 longestSentence(longText);
+longestSentence('I!');
 
 // console output
 // It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.
