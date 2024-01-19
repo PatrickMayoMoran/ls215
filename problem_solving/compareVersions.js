@@ -46,13 +46,24 @@ function compareVersions(version1, version2) {
 
   let length = version1Parts.length > version2Parts.length ? version1Parts.length : version2Parts.length;
 
-  console.log(length);
+  for (let i = 0; i < length; i += 1) {
+    let v1number = fetch(version1Parts, i);
+    let v2number = fetch(version2Parts, i);
+    if (v1number > v2number) {
+      return 1;
+    } else if (v2number > v1number) {
+      return -1;
+    }
+  }
 
-  // console.log(version1Parts, version2Parts);
   return 0;
 }
 
-function fetch(array, index)
+function fetch(array, index) {
+  let element = array[index];
+  if (element === undefined) element = 0;
+  return element;
+}
 
 function parseVersion(version) {
   let separatorRegEx = /\./;
