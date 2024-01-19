@@ -40,10 +40,19 @@ function compareVersions(version1, version2) {
   if (!validVersion(version1) || !validVersion(version2)) return null;
   version1Parts = parseVersion(version1);
   version2Parts = parseVersion(version2);
-  console.log(version1Parts, version2Parts);
 
+  version1Parts = version1Parts.map(part => parseInt(part, 10));
+  version2Parts = version2Parts.map(part => parseInt(part, 10));
+
+  let length = version1Parts.length > version2Parts.length ? version1Parts.length : version2Parts.length;
+
+  console.log(length);
+
+  // console.log(version1Parts, version2Parts);
   return 0;
 }
+
+function fetch(array, index)
 
 function parseVersion(version) {
   let separatorRegEx = /\./;
