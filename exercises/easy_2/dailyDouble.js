@@ -36,6 +36,21 @@
 function crunch(...args) {
   if (args.length === 0) return undefined;
   let deDoubled = '';
+  args = args.filter(arg => typeof arg === 'string');
+
+  for (let i = 0; i < args.length; i += 1) {
+    let string = args[i];
+    if (string.length < 1) continue;
+
+    let previousCharacter = '';
+    for (let j = 0; j < string.length; j += 1) {
+      let currentCharacter = string[j];
+      let same = currentCharacter === previousCharacter;
+      if (same) continue;
+      previousCharacter = currentCharacter;
+      deDoubled += currentCharacter;
+    }
+  }
 
   return deDoubled;
 }
