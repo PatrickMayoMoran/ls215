@@ -7,4 +7,15 @@ function repeatCharacter(character, times) {
   return repeated;
 }
 
-console.log(repeatCharacter("Tiny", 5));
+function logInBox(message) {
+  const horizontalRule = `+${repeatCharacter('-', message.length + 2)}+`;
+  const emptyLine = `|${repeatCharacter(' ', message.length + 2)}|`;
+
+  console.log(horizontalRule);
+  console.log(emptyLine);
+  console.log(`| ${message} |`);
+  console.log(emptyLine);
+  console.log(horizontalRule);
+}
+
+logInBox('To boldly go where no one has before');
