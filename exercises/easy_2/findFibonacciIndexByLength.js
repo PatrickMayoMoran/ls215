@@ -49,6 +49,14 @@ function generateNextNumber(sequence) {
 function findFibonacciIndexByLength(numberOfDigits) {
   let index = 1;
   let fibonacciSequence = [1];
+  let currentNumber = fibonacciSequence[0];
+
+  let correctLength = hasLength(currentNumber, numberOfDigits);
+
+  if (correctLength) {
+    return index;
+  } else {
+
   return generateNextNumber(fibonacciSequence);
 }
 
