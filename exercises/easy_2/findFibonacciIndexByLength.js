@@ -50,14 +50,15 @@ function findFibonacciIndexByLength(numberOfDigits) {
   let index = 1;
   let fibonacciSequence = [1];
   let currentNumber = fibonacciSequence[0];
-
   let correctLength = hasLength(currentNumber, numberOfDigits);
 
-  if (correctLength) {
-    return index;
-  } else {
+  while (!correctLength) {
+    currentNumber = generateNextNumber(fibonacciSequence);
+    index += 1;
+    correctLength = hasLength(currentNumber, numberOfDigits);
+  }
 
-  return generateNextNumber(fibonacciSequence);
+  return index;
 }
 
 console.log(findFibonacciIndexByLength(1n)) // === 1n);
