@@ -63,38 +63,82 @@ Questions:
 
 2. argument types will always be nested array, integers
 
-3. **Coordinate type: could be given an invalid coordinate, if so return null
+3. Coordinate type: could be given an invalid coordinate, if so return null
 
-4. ** What will array size be like? -> Always a square
+4.  What will array size be like? -> Always a square
+    Valid coordinates must be greater than 0 and less than array argument size
 
-5. ** What number types can we expect in the matrix? Valid integers OR Infinity/-Infinity
+5. What number types can we expect in the matrix? Valid integers OR Infinity/-Infinity
 
-6. ** What if there is a tie for lowest neighbor? -> could be duplicates of lowest neighbor, just return one number
+6. What if there is a tie for lowest neighbor? -> could be duplicates of lowest neighbor, just return one number
 
-7. ** What if -Infinity is a neighbor? -> Don't return it, return next lowest whole number
+7. What if -Infinity is a neighbor? -> Don't return it, return next lowest whole number
 
-8.** What if first array argument is empty? -> return null
+8. What if first array argument is empty? -> return null
 
 Examples / Test Cases
 
 Data Structures
+  array of valid neighbor coordinates
+  array of neighbors
 
 Algorithm
+  What kind of problem is this?
+    Selection:
+      Selecting the neighbors
+      Selecting the lowest
+  Helper methods:
+    check for valid inputs
+    check for valid coordinates
+    Check for valid inputs:
+      return null if first array argument is empty
+      return null if first array argument has a nested array that is empty
+      return null if it's an invalid coordinate
+    generateNeighborCoordinates
+
+  Main Algorithm
+    Return null if inputs are invalid
 
 */
 
 console.log(lowestElement([
-
 [1, 2, 3],
 [4, 5, 6],
 [7, 8, 9]
-
 ], 1, 1) === 1)
 
 console.log(lowestElement([
-
 [9, 8, 7],
 [0, -1, -3],
 [-5, -9, 54]
-
 ], 0, 0) === -1)
+
+// invalid coordinate -> null
+console.log(lowestElement([
+[9, 8, 7],
+[0, -1, -3],
+[-5, -9, 54]
+], -1, 0) === null)
+
+// if -Infinities are present, return next lowest whole number
+console.log(lowestElement([
+[-Infinity, 8, 7],
+[-Infinity, -1, -3],
+[-5, -9, 54]
+], 1, 1) === -9)
+
+// first array argument is empty -> return null
+console.log(lowestElement([], 0, 0) === null)
+
+// first array argument is empty -> return null
+console.log(lowestElement([[]], 0, 0) === null)
+
+// first array argument is empty -> return null
+console.log(lowestElement([[5]], 0, 0) === null)
+
+// duplicate lowest values -> just return one 
+console.log(lowestElement([
+[-9, 8, 7],
+[0, -1, -3],
+[-5, -9, 54]
+], 1, 0) === -9)
