@@ -89,56 +89,107 @@ Algorithm
       Selecting the lowest
   Helper methods:
     check for valid inputs
-    check for valid coordinates
-    Check for valid inputs:
+    check for invalid coordinates
+      INPUT
+    Check for invalid inputs:
+      INPUT: matrix, x, y
+      OUTPUT: boolean
       return null if first array argument is empty
       return null if first array argument has a nested array that is empty
       return null if it's an invalid coordinate
+        x or y are less than 0
+        x or y are greater than the size of the matrix
     generateNeighborCoordinates
+      INPUT: matrix size, x, y
+        create neighborCoordinates array
+        iterate from x - 1 to x + 1:
+          iterate from y - 1, y + 1
+            if x and y are greater than 0 AND
+               x and y are less than matrix size,
+               add x, y to neighbor coordinates
+        return neighbor coordinates
 
   Main Algorithm
     Return null if inputs are invalid
+    ** if array length is one, return value at that coordinate
+    generate save in an all possible neighbor coordinates
+    transform coordinates to matrix values
+    filter out -Infinity from matrix values
+    sort matrix values
+    return first matrix value
 
 */
+function invalidInputs(matrix, x, y) {
+  if (matrix.length === 0 || matrix[0].length === 0) return true;
+  if (x < 0 || y < 0) return true;
+  let size = matrix.length;
+  if (x > size || y > size) return true;
+
+  return false;
+}
+
+function generateNeighborCoordinates(size, x, y) {
+  let neighborCoordinates = [];
+
+  for (newX = x - 1; newX <= x + 1; newX += 1) {
+    for (newY = y - 1; newY <= y + 1; newY += 1) {
+      if (newX >= 0 && newY >= 0 && newX < size && newY < size) {
+        neighborCoordinates.push([newX, newY]);
+      }
+    }
+  }
+
+  return neighborCoordinates;
+}
+
+function lowestElement(matrix, x, y) {
+  if (invalidInputs(matrix, x, y)) return null;
+
+  let neighborCoordinates = generateNeighborCoordinates(matrix.length, x, y);
+  let neighbors = neighborCoordinates.map(c => matrix[c[0]][c[1]]);
+  neighbors = neighbors.filter(v => v !== -Infinity);
+  neighbors = neighbors.sort(v => parseInt(v));
+  return neighbors[0];
+}
 
 console.log(lowestElement([
 [1, 2, 3],
 [4, 5, 6],
 [7, 8, 9]
-], 1, 1) === 1)
+], 1, 1)  === 1)
 
 console.log(lowestElement([
 [9, 8, 7],
 [0, -1, -3],
 [-5, -9, 54]
-], 0, 0) === -1)
+], 0, 0)  === -1)
 
 // invalid coordinate -> null
 console.log(lowestElement([
 [9, 8, 7],
 [0, -1, -3],
 [-5, -9, 54]
-], -1, 0) === null)
+], -1, 0)  === null)
 
 // if -Infinities are present, return next lowest whole number
 console.log(lowestElement([
 [-Infinity, 8, 7],
 [-Infinity, -1, -3],
 [-5, -9, 54]
-], 1, 1) === -9)
+], 1, 1)  === -9)
 
 // first array argument is empty -> return null
-console.log(lowestElement([], 0, 0) === null)
+console.log(lowestElement([], 0, 0)  === null)
 
 // first array argument is empty -> return null
-console.log(lowestElement([[]], 0, 0) === null)
+console.log(lowestElement([[]], 0, 0)  === null)
 
-// first array argument is empty -> return null
-console.log(lowestElement([[5]], 0, 0) === null)
+// first array argument single element - return value
+console.log(lowestElement([[5]], 0, 0)  === 5)
 
 // duplicate lowest values -> just return one 
 console.log(lowestElement([
 [-9, 8, 7],
 [0, -1, -3],
 [-5, -9, 54]
-], 1, 0) === -9)
+], 1, 0)  === -9)
