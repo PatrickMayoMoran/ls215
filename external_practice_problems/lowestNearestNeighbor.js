@@ -103,8 +103,8 @@ function invalidInputs(matrix, x, y) {
 function generateNeighborCoordinates(size, x, y) {
   let neighborCoordinates = [];
 
-  for (newX = x - 1; newX <= x + 1; newX += 1) {
-    for (newY = y - 1; newY <= y + 1; newY += 1) {
+  for (let newX = x - 1; newX <= x + 1; newX += 1) {
+    for (let newY = y - 1; newY <= y + 1; newY += 1) {
       if (newX >= 0 && newY >= 0 && newX < size && newY < size) {
         neighborCoordinates.push([newX, newY]);
       }
