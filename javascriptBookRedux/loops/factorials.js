@@ -8,6 +8,6 @@ console.log(factorial(7));     // => 5040
 console.log(factorial(8));     // => 40320
 
 function factorial(number) {
-  if (number == 1) return 1;
+  if (number === 1) return 1;
   return number * (factorial(number - 1));
 }
