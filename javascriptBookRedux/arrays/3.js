@@ -3,3 +3,9 @@ let myArray = [
   [4, 2, 4],
   [9, 17, 16, 0],
 ];
+
+myArray.forEach(sub => {
+  sub.forEach(number => { 
+    if (number % 2 === 0) console.log(number)
+  });
+});
