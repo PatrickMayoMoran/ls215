@@ -20,3 +20,6 @@ for (let prop in mayo) {
 for (let prop in mayo) {
   if (mayo.hasOwnProperty(prop)) console.log(prop);
 }
+
+let tagKeys = Object.keys(tag);
+tagKeys.forEach(prop => console.log(prop)); // only name and age
