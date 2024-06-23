@@ -4,4 +4,8 @@ let mayo = {
 }
 
 let coach = Object.assign({job: "coach"}, mayo);
-console.log(coach);
+
+let groceryOne = {0: "milk", 1: "cheese"}
+let groceryTwo = {2: "celery", 3: "chicken"}
+let groceryThree = Object.assign({}, groceryOne, groceryTwo);
+console.log(groceryThree);
