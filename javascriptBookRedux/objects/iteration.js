@@ -15,3 +15,8 @@ tag.age = "30";
 for (let prop in mayo) {
   console.log(prop);
 }
+
+// filter out inherited using hasOwnProperty -- only name and age
+for (let prop in mayo) {
+  if (mayo.hasOwnProperty(prop)) console.log(prop);
+}
