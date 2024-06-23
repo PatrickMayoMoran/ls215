@@ -23,3 +23,16 @@ for (let prop in mayo) {
 
 let tagKeys = Object.keys(tag);
 tagKeys.forEach(prop => console.log(prop)); // only name and age
+
+let mayoValues = Object.values(mayo);
+console.log(`Mayo values: ${mayoValues}`);
+
+let mayoEntries = Object.entries(mayo);
+console.log(`Mayo entries: ${mayoEntries}`);
+
+mayoEntries.forEach(property => {
+  let key = property[0];
+  let value = property[1];
+  console.log(`Key of ${key} and value of ${value}`);
+});
+
