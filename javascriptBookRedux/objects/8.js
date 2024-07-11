@@ -1,3 +1,15 @@
+function copyObj(objToCopy, propertiesArray) {
+  let newCopy = {};
+  if (propertiesArray) {
+    propertiesArray.forEach(key => newCopy[key] = objToCopy[key]);
+  } else {
+    let keys = Object.keys(objToCopy);
+    keys.forEach(key => newCopy[key] = objToCopy[key]);
+  }
+
+  return newCopy;
+}
+
 let objToCopy = {
   foo: 1,
   bar: 2,
