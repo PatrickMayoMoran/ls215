@@ -1,5 +1,5 @@
 function allMatches(words, regEx) {
-  return words.filter(word => word.match(regEx));
+  return words.filter(word => regEx.test(word));
 }
 
 let words = [
