@@ -4,10 +4,10 @@
 //  - typeof should return string 'number'
 //  - value is not === to itself
 function isNotANumber(value) {
-  if (typeof value !== "number") {
-    return false;
-  } else if (value !== value) {
+  if (typeof value === "number" && value !== value) {
     return true;
+  } else {
+    return false;
   }
 }
 
