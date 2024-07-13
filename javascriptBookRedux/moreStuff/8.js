@@ -3,12 +3,22 @@
 // NaN:
 //  - typeof should return string 'number'
 //  - value is not === to itself
+
+/*
+FIRST SOLUTION:
+  - Has code smell of "If this is true, return true"
+  - if the boolean comparison is what we are evaluating... we can just return it!
 function isNotANumber(value) {
   if (typeof value === "number" && value !== value) {
     return true;
   } else {
     return false;
   }
+}
+*/
+
+function isNotANumber(value) {
+  return value !== value;
 }
 
 console.log(isNotANumber(NaN)); // true, all others false
