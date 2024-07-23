@@ -86,8 +86,6 @@ ALGORITHM
     - for each value, push it to the result array frequency times 
   - return result array
 
-
-
 */
 function getCounts(integers) {
   let counts = {};
