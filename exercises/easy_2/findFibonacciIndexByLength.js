@@ -41,21 +41,20 @@ function generateNextNumber(sequence) {
   let precedingTwo = sequence.slice(-2);
   let nextNumber = precedingTwo.reduce(
     (accumulator, value) => accumulator + value,
-    0
+    0n
   );
   return nextNumber;
 }
 
 function findFibonacciIndexByLength(numberOfDigits) {
-  let index = 1;
-  let fibonacciSequence = [1];
+  let index = 1n;
+  let fibonacciSequence = [1n];
   let currentNumber = fibonacciSequence[0];
-  let correctLength = hasLength(currentNumber, numberOfDigits);
 
-  while (!correctLength) {
+  while (String(currentNumber).length < numberOfDigits) {
     currentNumber = generateNextNumber(fibonacciSequence);
-    index += 1;
-    correctLength = hasLength(currentNumber, numberOfDigits);
+    index += 1n;
+    fibonacciSequence.push(currentNumber);
   }
 
   return index;
