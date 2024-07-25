@@ -10,7 +10,7 @@ function isDoubler(number) {
 
   let half = string.length / 2;
   // let reversed = string.slice(-half).split('').sort((a,b) => -1).join('');
-  return string.slice(-half) === string.slice(0,half);
+  return string.slice(half) === string.slice(0,half);
 }
 
 console.log(twice(37));          // 74
