@@ -5,10 +5,6 @@ function century (year) {
     century -= 1;
   }
 
-  if (catchWithTh(century)) {
-    return String(century) + 'th';
-  }
-
   return String(century) + centurySuffix(century)
 }
 
