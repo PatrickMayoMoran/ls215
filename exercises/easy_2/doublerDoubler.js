@@ -5,9 +5,12 @@ function twice(number) {
 }
 
 function isDoubler(number) {
-  if (String(number).length % 2 === 1) return false;
-  let half = String(number).length / 2;
-  return true;
+  let string = String(number);
+  if (string.length % 2 === 1) return false;
+
+  let half = string.length / 2;
+  // let reversed = string.slice(-half).split('').sort((a,b) => -1).join('');
+  return string.slice(-half) === string.slice(0,half);
 }
 
 console.log(twice(37));          // 74
