@@ -25,15 +25,18 @@
 //  return the result array
 
 function runningTotal(array) {
-  let result = [];
   let runningTotal = 0;
 
-  array.forEach(e => {
-    runningTotal += e;
-    result.push(runningTotal);
-  });
+  return array.map((e) => runningTotal += e);
+  // let result = [];
+  // let runningTotal = 0;
 
-  return result;
+  // array.forEach(e => {
+  //   runningTotal += e;
+  //   result.push(runningTotal);
+  // });
+
+  // return result;
 }
 
 console.log(runningTotal([2, 5, 13]));             // [2, 7, 20]
