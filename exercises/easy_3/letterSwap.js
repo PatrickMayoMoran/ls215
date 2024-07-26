@@ -6,7 +6,7 @@ function swap2(text) {
   if (text.length === 1) return text;
   let newEnd = text[0];
   let newStart = text[text.length - 1];
-  let middle = text.slice(1, text.length - 1);
+  let middle = text.slice(1, -1);
 
   return newStart + middle + newEnd;
 }
