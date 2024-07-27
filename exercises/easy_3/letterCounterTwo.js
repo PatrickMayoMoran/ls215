@@ -21,21 +21,34 @@
 //  Order object???
 //  Return that object
 
-function wordSizes(text) {
-  let words = text.split(' ');
-  let counts = {}
-  if (text.length === 0) return counts;
-  counts = words.reduce((counts, word) => {
-    let length = word.length;
-    if (counts[length]) {
-      counts[length] += 1;
-    } else {
-      counts[length] = 1;
-    }
-    return counts;
-  }, {});
+function justLetters(word) {
+  word = word.toLowerCase();
+  let cleanWord = '';
 
-  return counts;
+  for (let i = 0; i < word.length; i += 1) {
+    if ([word.length] === 0) continue;
+    let letter = word[i];
+    if (letter >= 'a' && letter <= 'z') cleanWord += letter;
+  }
+
+  return cleanWord;
+}
+
+function count(obj, word) {
+  word = justLetters(word);
+  let length = word.length;
+  if (obj[length]) {
+    obj[length] += 1;
+  } else {
+    obj[length] = 1;
+  }
+  return obj;
+}
+
+function wordSizes(text) {
+  if (text.length === 0) return {};
+  let words = text.split(' ');
+  return words.reduce(count, {});
 }
 
 console.log(wordSizes('Four score and seven.'));                       // { "3": 1, "4": 1, "5": 1, "6": 1 }
