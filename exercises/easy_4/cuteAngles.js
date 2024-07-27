@@ -25,6 +25,7 @@
 const DEGREE = '\u00B0';
 
 function dms(number) {
+  number = number % 360;
   let degrees = parseInt(number);
   let minutesValue = number % 1 * 60;
   let minutes = String(parseInt(minutesValue)).padStart(2, 0);
@@ -34,6 +35,7 @@ function dms(number) {
 }
 
 // All test cases should return true
+console.log(dms(400) === "40°00'00\"");
 console.log(dms(30) === "30°00'00\"");
 console.log(dms(76.73) === "76°43'48\"");
 console.log(dms(254.6) === "254°35'59\"");
