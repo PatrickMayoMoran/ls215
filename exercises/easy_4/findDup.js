@@ -1,3 +1,18 @@
+// GOAL: given an array of digits where exactly one digit is present twice,
+// return the digit that appears twice
+
+// INPUT: array of integers
+// OUTPUT: integer
+
+// RULES:
+//  Array will always have at least two integers
+//  Array will always be single argument with integers, no other data types
+
+// ALGORITHM:
+//  iterate through the array
+//    for each element, check if the rest of the array also has that element
+//    if so, return that element
+
 function findDup (array) {
   for (let i = 0; i < array.length; i += 1) {
     let e = array[i];
