@@ -8,3 +8,4 @@ console.log(word.charAt(0)); // B
 console.log(word.charAt(50)); // ''
 console.log(word.charAt("Meow")); // B - converts meow to integer 0
 console.log(word.charAt(undefined)); // B - converts undefined to integer 0
+console.log(word.charAt(-5)); // '' - does not do negative indices
