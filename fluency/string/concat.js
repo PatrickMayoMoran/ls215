@@ -5,8 +5,8 @@
 
 let string = "Mayo";
 let words = [" ", "is", " ", "delish"];
-console.log(string.concat("nnaise"));
-console.log(string.concat(...words));
-console.log(string.concat({}));
-console.log(string.concat([]));
-console.log(string.concat(undefined));
+console.log(string.concat("nnaise")); // Mayonnaise
+console.log(string.concat(...words)); // Mayo is delish
+console.log(string.concat({}));       // Mayo[object Object]
+console.log(string.concat([]));       // Mayo
+console.log(string.concat(undefined));// Mayoundefined
