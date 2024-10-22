@@ -9,3 +9,4 @@ console.log(tio.endsWith('o'));   // true
 console.log(tio.endsWith('tio')); // true - search strings can be long!
 console.log(tio.endsWith('meow'));// false
 console.log((tio.endsWith('')));  // true - empty string returns true
+console.log(tio.endsWith([]));    // true - arguments coerced to strings
