@@ -3,6 +3,7 @@
 */
 
 let tio = 'tio';
-console.log(tio.includes('tio'));
-console.log(tio.includes('')); // empty string returns true
-console.log(tio.includes('meow'));
+console.log(tio.includes('tio')); // true
+console.log(tio.includes('')); // true - empty string returns true
+console.log(tio.includes('meow')); // false
+console.log(tio.includes('tio', 1)); // false - optional 2nd argument sets starting position for search
