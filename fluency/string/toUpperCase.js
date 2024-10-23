@@ -6,9 +6,9 @@ let meow = "meow";
 let numbers = "one1two2three3";
 let other = "****meow****woof$$$$chaos!!!";
 
-console.log(meow);
-console.log(meow.toUpperCase());
-console.log(numbers);
-console.log(numbers.toUpperCase());
-console.log(other);
-console.log(other.toUpperCase());
+console.log(meow); // "meow"
+console.log(meow.toUpperCase()); // "MEOW"
+console.log(numbers); // "one1two2three3"
+console.log(numbers.toUpperCase()); // "ONE1TWO2THREE3"
+console.log(other); // "****meow****woof$$$$chaos!!!"
+console.log(other.toUpperCase()); // "****MEOW****WOOF$$$$CHAOS!!!"
