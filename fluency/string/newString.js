@@ -5,5 +5,5 @@
 let stringyThing = String("meow");
 let stringObject = new String("meow");
 
-console.log(`The type of stringyThing is ${typeof stringyThing}`);
-console.log(`The type of stringObject is ${typeof stringObject}`);
+console.log(`The type of stringyThing is ${typeof stringyThing}`); // string
+console.log(`The type of stringObject is ${typeof stringObject}`); // object
