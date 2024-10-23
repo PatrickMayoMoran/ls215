@@ -8,3 +8,6 @@ function returnMayo() {
 
 result = returnMayo();
 console.log(result);
+
+let expressionNotStatement = ("tio".indexOf('cat') < 0) ? "Success!" : "Failure";
+console.log(expressionNotStatement);
