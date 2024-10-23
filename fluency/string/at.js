@@ -6,8 +6,8 @@
 
 let tio = 'tio';
 
-console.log(tio.at(0));
-console.log(tio.at(-2));
-console.log(tio.at(2));
-console.log(tio.at(3));
-console.log(tio.at(-4));
+console.log(tio.at(0));   // "t"
+console.log(tio.at(-2));  // "i"
+console.log(tio.at(2));   // "o"
+console.log(tio.at(3));   // undefined
+console.log(tio.at(-4));  // undefined
