@@ -11,3 +11,4 @@ sentence.matchAll(regex).forEach(match => console.log(match));
 let matches = [...sentence.matchAll(regex)];
 console.log(matches[0]);
 console.log(matches[1]);
+console.log([...("Meow".matchAll(regex))]); // empty iterator returned - not falsy!
