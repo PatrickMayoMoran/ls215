@@ -4,8 +4,12 @@
 */
 
 let stringy = "Switzerland";
-console.log("Meow".toString());
-console.log(stringy.toString());
-console.log((55).toString());
-console.log(String(undefined));
+let sObject = new String("Switzerland");
+
+console.log("Meow".toString()); // Meow - same as valueOf
+console.log(stringy.toString()); // Switzerland
+console.log(sObject); // [String: "Switzerland"]
+console.log(sObject.toString()); // Switzerland
+console.log((55).toString()); // 55
+console.log(String(undefined)); // undefined
 console.log(String(55));
