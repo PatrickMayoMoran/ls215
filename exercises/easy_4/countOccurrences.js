@@ -38,8 +38,12 @@ function countOccurrences(elements) {
     }
   });
 
-  Object.keys(count).forEach(k => {
-    console.log(`${k} => ${count[k]}`);
+  let entries = Object.entries(count);
+  entries.sort((a,b) => b[1] - a[1]);
+  console.log(entries);
+
+  entries.forEach(e => {
+    console.log(`${e[0]} => ${e[1]}`);
   });
 }
 
