@@ -13,12 +13,19 @@ function negative(number) {
 }
 */
 
-// Alternative solution with explicit guard clauses for -0 and negative numebrs
+/*
+** Alternative solution with explicit guard clauses for -0 and negative numebrs
 function negative(number) {
   if (Object.is(number, -0)) return number;
   if (number < 0) return number;
 
   return number * -1;
+}
+*/
+
+// Alternative solution using ternary operator
+function negative(number) {
+  return (number >= 0) ? number * -1 : number;
 }
 
 console.log(negative(5));     // -5
