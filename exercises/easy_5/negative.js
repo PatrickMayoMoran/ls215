@@ -13,6 +13,14 @@ function negative(number) {
 }
 */
 
+// Alternative solution with explicit guard clauses for -0 and negative numebrs
+function negative(number) {
+  if (Object.is(number, -0)) return number;
+  if (number < 0) return number;
+
+  return number * -1;
+}
+
 console.log(negative(5));     // -5
 console.log(negative(-3));    // -3
 console.log(negative(0));     // -0
