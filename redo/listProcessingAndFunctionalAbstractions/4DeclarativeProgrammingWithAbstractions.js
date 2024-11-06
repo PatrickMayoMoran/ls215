@@ -31,6 +31,7 @@ for (let i = 0; i < numbers.length; i += 1) {
 console.log(newArray);
 */
 
+/*
 // iteration focused abstraction
 function isOddNumber(number) {
   return (number % 2) === 1;
@@ -45,3 +46,12 @@ numbers.forEach(e => {
 });
 
 console.log(newArray);
+*/
+
+// Filter abstraction that clearly represents purpose
+function isOddNumber(number) {
+  return (number % 2) === 1;
+}
+
+let oddNumbers = numbers.filter(isOddNumber);
+console.log(oddNumbers);
