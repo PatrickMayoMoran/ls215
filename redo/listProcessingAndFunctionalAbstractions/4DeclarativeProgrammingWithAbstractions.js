@@ -14,8 +14,8 @@ for (let i = 0; i < numbers.length; i += 1) {
 console.log(newArray);
 */
 
+/*
 // imperative style with function abstraction
-
 function isOddNumber(number) {
   return (number % 2) === 1;
 }
@@ -27,5 +27,21 @@ for (let i = 0; i < numbers.length; i += 1) {
     newArray.push(numbers[i]);
   }
 }
+
+console.log(newArray);
+*/
+
+// iteration focused abstraction
+function isOddNumber(number) {
+  return (number % 2) === 1;
+}
+
+let newArray = [];
+
+numbers.forEach(e => {
+  if (isOddNumber(e)) {
+    newArray.push(e);
+  }
+});
 
 console.log(newArray);
