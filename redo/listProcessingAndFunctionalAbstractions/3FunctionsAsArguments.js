@@ -30,3 +30,17 @@ iterate(count, function (number) { console.log(number)});
 
 // invocation with first class function in variable
 iterate(count, logger);
+
+// implementing other behavior - logging Odd or Even
+function oddOrEven(number) {
+  if (number % 2 === 0) {
+    console.log("even");
+  } else {
+    console.log("odd");
+  }
+}
+
+iterate(count, oddOrEven);
+
+// using built in forEach
+count.forEach(oddOrEven);
