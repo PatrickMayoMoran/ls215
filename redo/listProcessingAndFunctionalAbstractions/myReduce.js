@@ -13,6 +13,23 @@ function myReduce(array, func, initial) {
 }
 */
 
+function myReduce(array, func, initial) {
+  let index;
+  let accumulator;
+
+  if (initial === undefined) {
+    index = 1;
+    accumulator = array[0];
+  } else {
+    index = 0;
+    accumulator = initial;
+  }
+
+  array.slice(index).forEach(e => accumulator = func(accumulator, e));
+
+  return accumulator;
+}
+
 let smallest = (result, value) => (result <= value ? result : value);
 let sum = (result, value) => result + value;
 
