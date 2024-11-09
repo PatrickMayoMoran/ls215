@@ -79,7 +79,15 @@ let studentScores = {
 
 function generateClassRecordSummary(scores) {
   let studentGrades = calculateStudentGrades(scores);
-  return studentGrades;
+  let examData = calculateExamData(scores);
+  return {
+    studentGrades: studentGrades,
+    exams: examData,
+  };
+}
+
+function calculateExamData(scores) {
+  let exams = [];
 }
 
 function calculateStudentGrades(scores) {
