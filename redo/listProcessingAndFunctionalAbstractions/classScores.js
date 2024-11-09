@@ -104,7 +104,19 @@ function calculateStudentGrades(scores) {
 }
 
 function getLetterGrade(numberGrade) {
-  return 'A';
+  if (numberGrade >= 93) {
+    return 'A';
+  } else if (numberGrade >= 85) {
+    return 'B';
+  } else if (numberGrade >= 77) {
+    return 'C';
+  } else if (numberGrade >= 69) {
+    return 'D';
+  } else if (numberGrade >= 60) {
+    return 'E';
+  } else {
+    return 'F';
+  }
 }
 
 console.log(generateClassRecordSummary(studentScores));
