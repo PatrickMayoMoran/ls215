@@ -1,8 +1,14 @@
+/*
 function isUppercase(text) {
   for (let i = 0; i < text.length; i += 1) {
     if (text[i] !== text[i].toUpperCase()) return false;
   }
   return true;
+}
+*/
+
+function isUppercase(text) {
+  return !/[a-z]/.test(text);
 }
 
 console.log(isUppercase('t'));               // false
